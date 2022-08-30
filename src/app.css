@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Qwitcher+Grypen&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    transition: all 0.3s ease 0s;
+}
+
+:root {
+    --LightTheme: #edf1f4;
+    --LightGlow: #fffb;
+    --LightShadow: rgba(0,0,0,0.1);
+
+    --DarkTheme: #282c2f;
+    --DarkGlow: rgba(255,255,255,0.05);
+    --DarkShadow: rgba(0,0,0,0.25);
+}
+
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.body > h1 {
+    position: absolute;
+    top: 80px;
+
+    font-size: 70px;
+    font-family: 'Qwitcher Grypen', cursive;
+
+    background-image: linear-gradient(90deg, #f44336, #31a935, #2196f4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    user-select: none;
+    z-index: 100;
+}
+
+.neonLight {
+    position: absolute;
+    top: 100px;
+
+    width: 300px;
+    height: 40px;
+    border-radius: 90%;
+
+    filter: blur(20px) opacity(0.3);
+
+    background-image: linear-gradient(90deg, #f44336, #31a935, #2196f4);
+
+    z-index: 99;
+}
+
+.light {
+    color: black;
+    background: var(--LightTheme);
+
+
+    box-shadow: 15px 15px 20px var(--LightShadow),
+    -15px -15px 20px var(--LightGlow);
+}
+
+.lightInset {
+    color: black;
+    background: var(--LightTheme);
+
+
+    box-shadow: inset 10px 10px 15px var(--LightShadow),
+    inset -10px -10px 15px var(--LightGlow);
+}
+
+.dark {
+    color: white;
+    background: var(--DarkTheme);
+
+    box-shadow: 10px 10px 15px var(--DarkShadow),
+    -10px -10px 15px var(--DarkGlow);
+}
+
+.darkInset {
+    color: white;
+    background: var(--DarkTheme);
+
+    box-shadow: inset 5px 5px 10px var(--DarkShadow),
+    inset -5px -5px 10px var(--DarkGlow);
+}

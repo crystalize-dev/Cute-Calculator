@@ -1,0 +1,81 @@
+.switcher {
+    position: absolute;
+    top: -140px;
+    right: 100px;
+
+    width: 200px;
+    height: 200px;
+
+    user-select: none;
+}
+
+.LightRound, .DarkRound {
+    display: flex;
+    justify-content: center;
+
+    position: relative;
+    width: inherit;
+    height: inherit;
+
+    border-radius: 50%;
+}
+
+.darkTheme {
+    transform: rotate(180deg);
+}
+
+.LightRound > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+
+    width: 80px;
+    height: 80px;
+
+    background: var(--LightTheme);
+
+
+    box-shadow: 15px 15px 20px var(--LightShadow),
+    -15px -15px 20px var(--LightGlow);
+
+    border-radius: 50%;
+
+    cursor: pointer;
+}
+
+.DarkRound > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+
+    width: 80px;
+    height: 80px;
+
+    background: var(--DarkTheme);
+
+    box-shadow: 3px 3px 6px var(--DarkShadow),
+    -3px -3px 6px var(--DarkGlow);
+
+    border-radius: 50%;
+
+    cursor: pointer;
+}
+
+img {
+    width: 60%;
+    height: 60%;
+}
+
+.moon {
+    transform: scale(-1, 1) rotate(40deg);
+
+    top: -40px;
+}
+
+.sun {
+    bottom: -40px;
+}
