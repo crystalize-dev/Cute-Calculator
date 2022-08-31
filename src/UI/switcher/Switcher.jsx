@@ -1,17 +1,19 @@
-import React from 'react';
-import cl from "./switcher.module.css"
+import React, {useContext} from 'react';
 import sun from "../../img/sun.png"
 import moon from "../../img/moon.png"
-import classes from "classnames";
+import {ThemeContext} from "../../Context/Context";
+import "./switcher.css"
 
-const Switcher = ({theme, setTheme}) => {
+const Switcher = () => {
+    const {toggleTheme} = useContext(ThemeContext)
+
     return (
-        <div className={cl.switcher}>
-            <div className={theme ? classes(cl.LightRound, cl.darkTheme, "light") : classes(cl.DarkRound, "dark")}>
-                <div className={cl.moon} onClick={() => setTheme(!theme)}>
+        <div className="switcher">
+            <div className="round">
+                <div className="moon" onClick={toggleTheme}>
                     <img src={moon} alt="" draggable={false}/>
                 </div>
-                <div className={cl.sun} onClick={() => setTheme(!theme)}>
+                <div className="sun" onClick={toggleTheme}>
                     <img src={sun} alt="" draggable={false}/>
                 </div>
             </div>

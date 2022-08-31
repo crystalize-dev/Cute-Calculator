@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
-import cl from "./window.module.css"
 import {calculate, isSpecial} from "../../utility/Funcs";
 import Switcher from "../switcher/Switcher";
-import classes from "classnames";
+import "./window.css"
 
-const Window = ({mainTheme, setMainTheme}) => {
+const Window = () => {
     const [exp, setExp] = useState("0")
 
     const addOnScreen = (event) => {
@@ -59,12 +58,18 @@ const Window = ({mainTheme, setMainTheme}) => {
 
     return (
         <div>
-            <Switcher theme={mainTheme} setTheme={setMainTheme}/>
-            <form className={mainTheme ? classes(cl.calculator, "light") : classes(cl.calculator, "dark")} onSubmit={(e) => calc(e)}>
-                <input className={mainTheme ? classes(cl.input, "lightInset") : classes(cl.input, "darkInset")} type="text" value={exp} onChange={(e) => setExp(e.target.value)} onClick={(e) => fixInput(e)}/>
+            <form className="calculator" onSubmit={(e) => calc(e)}>
+                <div className="neonName">
+                    <h1>Cute Calculator!</h1>
+                    <div className="neonLight"/>
+                </div>
 
-                <div className={mainTheme ? cl.buttonsLight : cl.buttonsDark}>
-                    <span className={mainTheme ? cl.clearLight : cl.clearDark} onClick={clear}>Clear</span>
+                <Switcher/>
+
+                <input className="input" type="text" value={exp} onChange={(e) => setExp(e.target.value)} onClick={(e) => fixInput(e)}/>
+
+                <div className="buttons">
+                    <span className="clear" onClick={clear}>Clear</span>
                     <span onClick={(event) => addOnScreen(event)}>/</span>
                     <span onClick={(event) => addOnScreen(event)}>*</span>
                     <span onClick={(event) => addOnScreen(event)}>7</span>
@@ -74,14 +79,14 @@ const Window = ({mainTheme, setMainTheme}) => {
                     <span onClick={(event) => addOnScreen(event)}>4</span>
                     <span onClick={(event) => addOnScreen(event)}>5</span>
                     <span onClick={(event) => addOnScreen(event)}>6</span>
-                    <span className={mainTheme ? cl.plusLight : cl.plusDark} onClick={(event) => addOnScreen(event)}>+</span>
+                    <span className="plus" onClick={(event) => addOnScreen(event)}>+</span>
                     <span onClick={(event) => addOnScreen(event)}>1</span>
                     <span onClick={(event) => addOnScreen(event)}>2</span>
                     <span onClick={(event) => addOnScreen(event)}>3</span>
                     <span onClick={(event) => addOnScreen(event)}>0</span>
                     <span onClick={(event) => addOnScreen(event)}>00</span>
                     <span onClick={(event) => addOnScreen(event)}>.</span>
-                    <span className={mainTheme ? cl.equalLight : cl.equalDark} onClick={(e) => calc(e)}>=</span>
+                    <span className="equal" onClick={(e) => calc(e)}>=</span>
                 </div>
             </form>
         </div>

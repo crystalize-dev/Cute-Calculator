@@ -1,18 +1,23 @@
 import Window from "./UI/window/window";
-import "./app.css"
+import {ThemeContext} from "./Context/Context"
 import {useState} from "react";
+import "./app.css"
 
 function App() {
-    const [mainTheme, setMainTheme] = useState(true)
+    const [theme, setTheme] = useState("light")
+
+    const toggleTheme = () => {
+        setTheme((curr) => curr === 'light' ? "dark" : "light");
+    }
 
     return (
-        <div className={mainTheme ? "body light" : "body dark"}>
-            <h1>Cute Calculator!</h1>
-            {!mainTheme &&
-                <div className="neonLight"/>
-            }
-            <Window mainTheme={mainTheme} setMainTheme={setMainTheme}/>
-        </div>
+        <ThemeContext.Provider value={{theme, toggleTheme}}>
+            <div id={theme}>
+                <div className="body">
+                    <Window/>
+                </div>
+            </div>
+        </ThemeContext.Provider>
     );
 }
 

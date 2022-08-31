@@ -1,0 +1,183 @@
+.calculator {
+    position: relative;
+
+    padding: 20px;
+
+    width: 500px;
+
+    border-radius: 20px;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#light .calculator {
+    background: var(--LightTheme);
+
+    box-shadow: 15px 15px 20px var(--LightShadow),
+    -15px -15px 20px var(--LightGlow);
+}
+
+#dark .calculator {
+    background: var(--DarkTheme);
+
+    box-shadow: 10px 10px 15px var(--DarkShadow),
+    -5px -5px 10px var(--DarkGlow);
+}
+
+.neonName {
+    position: absolute;
+    top: 0;
+    left: 20px;
+
+    font-size: 26px;
+    font-family: 'Qwitcher Grypen', cursive;
+
+    user-select: none;
+}
+
+.neonName h1 {
+    background-image: linear-gradient(90deg, #f44336, #31a935, #2196f4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    z-index: 100;
+}
+
+#dark .neonLight {
+    position: absolute;
+    top: 15%;
+
+    width: 100%;
+    height: 70%;
+    border-radius: 100%;
+
+    background-image: linear-gradient(90deg, #f44336, #31a935, #2196f4);
+    filter: opacity(0.3) blur(10px);
+
+    z-index: 90;
+}
+
+
+.input {
+    margin-top: 40px;
+    padding: 0 20px;
+
+    outline: none;
+    border: none;
+
+    font-size: 24px;
+
+    width: 100%;
+    height: 80px;
+
+    border-radius: 10px;
+}
+
+#light .input {
+    background: var(--LightTheme);
+
+    box-shadow: inset 15px 15px 20px var(--LightShadow),
+    inset -15px -15px 20px var(--LightGlow);
+}
+
+#dark .input {
+    background: var(--DarkTheme);
+
+    color: white;
+
+    box-shadow: inset 10px 10px 15px var(--DarkShadow),
+    inset -5px -5px 10px var(--DarkGlow);
+}
+
+
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 0.8fr;
+    margin-top: 20px;
+    user-select: none;
+
+    border-radius: 10px;
+}
+
+
+.buttons span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 10px;
+
+    min-height: 70px;
+
+    border-radius: 50px;
+    cursor: pointer;
+}
+#light .buttons span {
+    color: black;
+    background: var(--LightTheme);
+
+
+    box-shadow: 5px 5px 10px var(--LightShadow),
+    -5px -5px 10px var(--LightGlow);
+}
+#dark .buttons span {
+    background: var(--DarkTheme);
+
+    color: white;
+
+    box-shadow: 10px 10px 15px var(--DarkShadow),
+    -5px -5px 10px var(--DarkGlow);
+}
+
+#light .buttons span:active {
+    box-shadow: inset 15px 15px 20px var(--LightShadow),
+    inset -15px -15px 20px var(--LightGlow);
+}
+
+#dark .buttons span:active {
+    box-shadow: inset 10px 10px 15px var(--DarkShadow),
+    inset -5px -5px 10px var(--DarkGlow);
+}
+
+
+.clear {
+    grid-column: span 2 !important;
+    background: #f44336 !important;
+    color: white !important;
+    transition: none !important;
+}
+
+.plus {
+    grid-row: span 2 !important;
+    color: white !important;
+    background: #31a935 !important;
+    transition: none !important;
+}
+
+.equal {
+    color: white !important;
+    background: #2196f4 !important;
+    border: none !important;
+    transition: none !important;
+}
+
+#dark .clear {
+    box-shadow: 0 0 30px #f44336 !important;
+}
+
+#dark .plus {
+    box-shadow: 0 0 30px #31a935 !important;
+}
+
+#dark .equal {
+    box-shadow: 0 0 30px #2196f4 !important;
+}
+
+#light .clear:active,
+#light .plus:active,
+#light .equal:active {
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.1),
+    -10px -10px 15px #fffb,
+    inset 10px 10px 15px rgba(0,0,0,0.2) !important;
+}

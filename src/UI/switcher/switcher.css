@@ -1,15 +1,15 @@
 .switcher {
     position: absolute;
-    top: -140px;
-    right: 100px;
+    top: -60px;
+    right: 20px;
 
-    width: 200px;
-    height: 200px;
+    width: 90px;
+    height: 90px;
 
     user-select: none;
 }
 
-.LightRound, .DarkRound {
+.round {
     display: flex;
     justify-content: center;
 
@@ -20,49 +20,45 @@
     border-radius: 50%;
 }
 
-.darkTheme {
+#light .round {
+    background: var(--LightTheme);
+
     transform: rotate(180deg);
 }
 
-.LightRound > * {
+
+#dark .round {
+    background: var(--DarkTheme);
+
+}
+
+.round > * {
     display: flex;
     justify-content: center;
     align-items: center;
 
     position: absolute;
 
-    width: 80px;
-    height: 80px;
-
-    background: var(--LightTheme);
-
-
-    box-shadow: 15px 15px 20px var(--LightShadow),
-    -15px -15px 20px var(--LightGlow);
+    width: 40px;
+    height: 40px;
 
     border-radius: 50%;
 
     cursor: pointer;
 }
 
-.DarkRound > * {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#light .round > * {
+    background: var(--LightTheme);
 
-    position: absolute;
+    box-shadow: 3px 3px 6px var(--LightShadow),
+    -3px -3px 6px var(--LightGlow);
+}
 
-    width: 80px;
-    height: 80px;
-
+#dark .round > * {
     background: var(--DarkTheme);
 
     box-shadow: 3px 3px 6px var(--DarkShadow),
     -3px -3px 6px var(--DarkGlow);
-
-    border-radius: 50%;
-
-    cursor: pointer;
 }
 
 img {
@@ -73,9 +69,9 @@ img {
 .moon {
     transform: scale(-1, 1) rotate(40deg);
 
-    top: -40px;
+    top: -20px;
 }
 
 .sun {
-    bottom: -40px;
+    bottom: -20px;
 }
